@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İlan Detayı | Çağrı Duran Emlak</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="images/logo.png">
+</head>
+<body>
+    <header id="header" class="scrolled">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Çağrı Duran Emlak" class="header-logo">
+                Çağrı Duran <span>Emlak</span>
+            </a>
+            <div class="header-right">
+                <div class="lang-switcher">
+                    <img src="https://flagcdn.com/w40/tr.png" alt="TR" class="flag-icon active"
+                        onclick="setLanguage('tr')" title="Türkçe">
+                    <img src="https://flagcdn.com/w40/gb.png" alt="EN" class="flag-icon" onclick="setLanguage('en')"
+                        title="English">
+                </div>
+                <a href="index.html" class="auth-btn"><i class="fas fa-home"></i> <span data-i18n="detail_back">Ana Sayfaya Dön</span></a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container detail-header" id="detail-container">
+        <div style="text-align:center; padding: 100px 0;">
+            <i class="fas fa-spinner fa-spin fa-3x" style="color: var(--primary);"></i>
+            <h2 style="margin-top:20px;">İlan Yükleniyor...</h2>
+        </div>
+    </div>
+    
+    <footer class="footer" style="margin-top: 50px;">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo text-light">
+                        <img src="images/logo.png" alt="Logo" class="footer-logo">
+                        Çağrı Duran <span>Emlak</span>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Çağrı Duran Emlak. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Fullscreen Lightbox -->
+    <div id="lightboxOverlay" class="gallery-overlay" style="display: none;">
+        <span class="close-gallery" onclick="closeLightbox()">&times;</span>
+        <button class="gallery-nav prev" onclick="changeLightbox(-1)"><i class="fas fa-chevron-left"></i></button>
+        <div class="gallery-content">
+            <img id="lightbox-main-img" src="" alt="Gallery Image">
+        </div>
+        <button class="gallery-nav next" onclick="changeLightbox(1)"><i class="fas fa-chevron-right"></i></button>
+    </div>
+
+    <!-- Script -->
+    <script src="js/i18n.js"></script>
+    <script src="js/detail.js"></script>
+</body>
+</html>

@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antalya Emlak | Satılık Daire, Kiralık Ev, Villa, Arsa & Lüks Konut</title>
+    <meta name="description"
+        content="Antalya emlak sektöründe satılık daire, kiralık ev, villa, arsa ve lüks konut fırsatları. Kentsel dönüşüm danışmanlığı ile yatırımınızı büyütün.">
+    <meta name="keywords"
+        content="Antalya emlak, Antalya satılık daire, Antalya kira lık ev, Antalya villa, Antalya lüks daire, Antalya arsa, Antalya kentsel dönüşüm, Lara satılık daire, Konyaaltı kiralık daire">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.siteniz.com/antalya-emlak">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Outfit:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="images/logo.png">
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <div class="header-left-mobile">
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <a href="index.html" class="logo">
+                    <img src="images/logo.png" alt="Çağrı Duran Emlak" class="header-logo">
+                    <span class="logo-text">Çağrı Duran <span>Emlak</span></span>
+                </a>
+            </div>
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="#hero" data-i18n="nav_home">Anasayfa</a></li>
+                    <li><a href="#about" data-i18n="nav_about">Hakkında</a></li>
+                    <li><a href="#sale" data-i18n="nav_sale"
+                            onclick="if(window.innerWidth <= 768) showPortfolioSection('sale')">Satılık Portföy</a></li>
+                    <li><a href="#rent" data-i18n="nav_rent"
+                            onclick="if(window.innerWidth <= 768) showPortfolioSection('rent')">Kiralık Portföy</a></li>
+                    <li><a href="#arsa" data-i18n="nav_arsa"
+                            onclick="if(window.innerWidth <= 768) showPortfolioSection('arsa')">Arsa Portföy</a></li>
+                    <li><a href="#contact" data-i18n="nav_contact">Size Ulaşalım</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-right">
+                <div class="auth-section">
+                    <!-- Login Button (Visible when logged out) -->
+                    <div id="login-trigger-wrapper">
+                        <button id="headerLoginBtn" class="auth-btn" title="Giriş"><i
+                                class="fas fa-portrait"></i></button>
+                        <!-- Dropdown Popup -->
+                        <div id="login-dropdown" class="auth-dropdown">
+                            <input type="text" id="username" placeholder="Kullanıcı Adı" class="auth-input">
+                            <input type="password" id="password" placeholder="Şifre" class="auth-input">
+                            <button onclick="handleLogin()" class="btn btn-primary btn-block"
+                                style="padding: 8px;">Giriş</button>
+                        </div>
+                    </div>
+
+                    <!-- Logout Button (Visible when logged in) -->
+                    <div id="logout-form" style="display: none; gap: 10px; align-items: center;">
+                        <button onclick="openPasswordModal()" class="auth-btn auth-pwd-btn"
+                            style="background-color: transparent; border: 1px solid var(--primary); color: var(--primary);"><i
+                                class="fas fa-key"></i> Şifre Değiştir</button>
+                        <button onclick="handleLogout()" class="auth-btn logout-btn"><i class="fas fa-sign-out-alt"></i>
+                            Çıkış Yap</button>
+                    </div>
+                </div>
+                <div class="lang-switcher">
+                    <img src="https://flagcdn.com/w40/tr.png" alt="TR" class="flag-icon active"
+                        onclick="setLanguage('tr')" title="Türkçe">
+                    <img src="https://flagcdn.com/w40/gb.png" alt="EN" class="flag-icon" onclick="setLanguage('en')"
+                        title="English">
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+    <!-- Floating Action Buttons -->
+    <div class="floating-buttons">
+        <a href="https://wa.me/905435225881" target="_blank" class="floating-item whatsapp desktop-only-flex">
+            <i class="fab fa-whatsapp"></i>
+            <span class="fab-text" data-i18n="float_wa">WhatsApp'tan Yazın</span>
+        </a>
+        <a href="https://instagram.com/cagriduran.realestate" target="_blank" class="floating-item instagram">
+            <i class="fab fa-instagram"></i>
+            <span class="fab-text" data-i18n="float_ig">Instagram'ı İnceleyin</span>
+        </a>
+        <a href="https://youtube.com/@emlakgunlukleri0" target="_blank" class="floating-item youtube">
+            <i class="fab fa-youtube"></i>
+            <span class="fab-text" data-i18n="float_yt">YouTube Kanalımız</span>
+        </a>
+        <a href="tel:+905435225881" class="floating-item phone">
+            <i class="fas fa-phone"></i>
+            <span class="fab-text" data-i18n="float_phone">Hemen Arayın</span>
+        </a>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-banner-section">
+        <img src="images/hero-banner.png"
+            onerror="this.style.display='none'; this.parentElement.classList.add('hero-no-image')"
+            alt="Çağrı Duran Gayrimenkul" class="hero-image">
+    </section>
+
+    <!-- Kentsel Dönüşüm Section -->
+    <section id="kentsel-donusum" class="section section-kd">
+        <div class="container kd-container">
+            <div class="kd-content text-center">
+                <h1 class="kd-main-title">ANTALYA EMLAK & KENTSEL DÖNÜŞÜM DANIŞMANLIĞI</h1>
+                
+                <div class="kd-grid">
+                    <div class="kd-card highlight" onclick="openRichKDModal()" style="cursor: pointer;">
+                        <div class="kd-icon-box">
+                            <i class="fas fa-building-circle-check"></i>
+                        </div>
+                        <h2>Antalya Kentsel Dönüşüm Hizmetleri</h2>
+                        <p>
+                            Riskli yapıların modern ve depreme dayanıklı yaşam alanlarına dönüşümü. Tüm süreci profesyonelce yöneterek mülkünüze değer katıyoruz.
+                        </p>
+                        <span class="kd-btn-trigger">SÜRECİ VE ÖRNEKLERİ İNCELE <i class="fas fa-arrow-right"></i></span>
+                    </div>
+
+                    <div class="kd-card seo-block">
+                        <h2>Satılık Daire Antalya</h2>
+                        <p>
+                            Antalya satılık daire seçenekleri arasında deniz manzaralı, site içerisinde, sıfır ve uygun fiyatlı daireler yer almaktadır. Lara, Konyaaltı, Kepez ve Muratpaşa bölgelerinde yatırım değeri yüksek konutları sizlere sunuyoruz.
+                        </p>
+                    </div>
+
+                    <div class="kd-card seo-block">
+                        <h2>Kiralık Daire Antalya</h2>
+                        <p>
+                            Antalya kiralık daire ve kiralık ev seçeneklerimiz, merkezi konumda, ulaşımı kolay ve her bütçeye uygun alternatifler sunar. Kısa ve uzun dönem kiralık seçeneklerimiz ile hızlı çözümler sağlıyoruz.
+                        </p>
+                    </div>
+
+                    <div class="kd-card seo-block">
+                        <h2>Antalya Villa & Lüks Konut</h2>
+                        <p>
+                            Antalya satılık villa ve lüks daire portföyümüz; modern mimari, özel havuzlu ve yüksek yaşam standartlarına sahip seçeneklerden oluşmaktadır. Yüksek kira getirisi ve değer artışı ile yatırımcıların gözdesidir.
+                        </p>
+                    </div>
+
+                    <div class="kd-card seo-block">
+                        <h2>Antalya Arsa Yatırımı</h2>
+                        <p>
+                            Antalya arsa yatırımı yapmak isteyenler için imarlı arsa, ticari arsa ve yatırım fırsatı sunan bölgelerde profesyonel danışmanlık hizmeti veriyoruz. Doğru lokasyon ile maksimum kazanç hedefliyoruz.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="kd-bottom-row">
+                    <div class="kd-info-block">
+                        <h2>Neden Bizi Tercih Etmelisiniz?</h2>
+                        <ul class="kd-list">
+                            <li><i class="fas fa-check"></i> Antalya bölgesinde uzman emlak danışmanlığı</li>
+                            <li><i class="fas fa-check"></i> Geniş satılık ve kiralık portföy</li>
+                            <li><i class="fas fa-check"></i> Kentsel dönüşümde anahtar teslim hizmet</li>
+                            <li><i class="fas fa-check"></i> Yüksek yatırım getirisi odaklı çözümler</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="kd-info-block">
+                        <h2>İletişim</h2>
+                        <p>
+                            Çağrı Duran Emlak ile Antalya’da doğru yatırım fırsatlarını yakalayın. Satılık, kiralık ve kentsel dönüşüm projeleri için hemen bizimle iletişime geçin.
+                        </p>
+                        <a href="#contact" class="btn btn-primary" style="margin-top: 15px;">Hemen İletişime Geçin</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container about-container">
+            <div class="about-text">
+                <h2 class="section-title" data-i18n="about_title">Hakkında</h2>
+                <div class="about-mobile-flex">
+                    <div class="about-image-mobile">
+                        <img src="images/profile.png" alt="Çağrı Duran">
+                    </div>
+                    <div class="about-desc">
+                        <!-- Masaüstü Orijinal Tasarım -->
+                        <div class="desktop-only">
+                            <p data-i18n="about_text">Çağrı Duran Emlak olarak, yılların getirdiği tecrübe ve Realty
+                                World güvencesiyle sizlere en iyi hizmeti sunmayı amaçlıyoruz. Doğru yatırımı yapmak,
+                                mülkünüzü en değerinde satmak veya kiralamak için profesyonel ekibimizle her zaman
+                                yanınızdayız.</p>
+                            <div class="about-features-wrapper">
+                                <ul class="about-features">
+                                    <li><i class="fas fa-check-circle"></i> <span data-i18n="feat_1">Güvenilir ve Şeffaf
+                                            Hizmet</span>
+                                    </li>
+                                    <li><i class="fas fa-check-circle"></i> <span data-i18n="feat_2">Geniş ve Seçkin
+                                            Portföy</span></li>
+                                    <li><i class="fas fa-check-circle"></i> <span data-i18n="feat_3">Profesyonel
+                                            Danışmanlık</span></li>
+                                </ul>
+                                <div class="about-badge">
+                                    <img src="images/eids-logo.png" alt="EİDS Logo" class="eids-logo">
+                                    <span class="ttbs-no">ttbs no :0702253-097</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mobil Tasarım -->
+                        <div class="mobile-only-about">
+                            <p data-i18n="about_text_short">Çağrı Duran Emlak olarak, yılların getirdiği tecrübe ve
+                                Realty World güvencesiyle sizlere en iyi hizmeti sunmayı amaçlıyoruz.</p>
+                            <div id="about-more" class="about-more-hidden">
+                                <p data-i18n="about_text_more">Doğru yatırımı yapmak, mülkünüzü en değerinde satmak veya
+                                    kiralamak için profesyonel ekibimizle her zaman yanınızdayız.</p>
+                                <div class="about-features-wrapper">
+                                    <ul class="about-features">
+                                        <li><i class="fas fa-check-circle"></i> <span data-i18n="feat_1">Güvenilir ve
+                                                Şeffaf Hizmet</span>
+                                        </li>
+                                        <li><i class="fas fa-check-circle"></i> <span data-i18n="feat_2">Geniş ve Seçkin
+                                                Portföy</span></li>
+                                        <li><i class="fas fa-check-circle"></i> <span data-i18n="feat_3">Profesyonel
+                                                Danışmanlık</span></li>
+                                    </ul>
+                                    <div class="about-badge">
+                                        <img src="images/eids-logo.png" alt="EİDS Logo" class="eids-logo">
+                                        <span class="ttbs-no">ttbs no :0702253-097</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <button id="readMoreBtn" class="btn btn-outline mobile-read-more"
+                                style="color: var(--primary); border-color: var(--primary); margin-top: 15px; padding: 5px 15px;"
+                                onclick="toggleAbout()">Devamını Oku</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image desktop-only">
+                <img src="images/profile.png" alt="Çağrı Duran">
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolios Mobile Button Menu -->
+    <section id="portfolio-menu-mobile" class="section bg-light portfolio-mobile-only" style="padding: 2rem 0;">
+        <div class="container text-center">
+            <h3 style="margin-bottom: 20px; color: var(--secondary); font-size: 1.5rem; text-transform: uppercase;">
+                Portföylerimizi İnceleyin</h3>
+            <div id="portfolio-dropdown" style="display: flex; flex-direction: column; gap: 15px;">
+                <button class="btn btn-primary" onclick="showPortfolioSection('sale')"
+                    style="font-size: 1.1rem; padding: 12px;">Satılık Portföyler</button>
+                <button class="btn"
+                    style="background-color: var(--dark); color: white; font-size: 1.1rem; padding: 12px;"
+                    onclick="showPortfolioSection('rent')">Kiralık Portföyler</button>
+                <button class="btn" style="background-color: #2d6a4f; color: white; font-size: 1.1rem; padding: 12px;"
+                    onclick="showPortfolioSection('arsa')">Arsa Portföyleri</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sale Portfolio -->
+    <section id="sale" class="section">
+        <div class="container">
+            <h2 class="section-title text-center" data-i18n="sale_title">Satılık Portföy</h2>
+            <div class="portfolio-grid" id="grid-sale">
+            </div>
+        </div>
+    </section>
+
+    <!-- Rent Portfolio -->
+    <section id="rent" class="section">
+        <div class="container">
+            <h2 class="section-title text-center" data-i18n="rent_title">Kiralık Portföy</h2>
+            <div class="portfolio-grid" id="grid-rent">
+            </div>
+        </div>
+    </section>
+
+    <!-- Arsa Portfolio -->
+    <section id="arsa" class="section">
+        <div class="container">
+            <h2 class="section-title text-center" data-i18n="arsa_title">Arsa Portföy</h2>
+            <div class="portfolio-grid" id="grid-arsa">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="section bg-dark">
+        <div class="container contact-container">
+            <div class="contact-info">
+                <h2 class="section-title text-light" data-i18n="contact_title">Size Ulaşalım</h2>
+                <p class="text-light-muted" data-i18n="contact_subtitle">Hayalinizdeki eve ulaşmak veya gayrimenkulünüzü
+                    en iyi şekilde değerlendirmek için iletişim bilgilerinizi bırakın, uzman ekibimiz en kısa sürede
+                    sizi arasın.</p>
+                <ul class="contact-list">
+                    <li><i class="fas fa-envelope"></i> <a
+                            href="mailto:cagriduran@realtyworld.com.tr">cagriduran@realtyworld.com.tr</a></li>
+                    <li><i class="fas fa-phone"></i> <a href="tel:+905435225881">0 543 522 58 81</a></li>
+                    <li><i class="fab fa-instagram"></i> <a href="https://instagram.com/cagriduran.realestate"
+                            target="_blank" rel="noopener">@cagriduran.realestate</a></li>
+                    <li class="contact-address">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span data-i18n="contact_address">Çağlayan Mah. Bülent Ecevit Blv. Akasya Sitesi No:157A
+                            Muratpaşa/Antalya</span>
+                    </li>
+                </ul>
+                <a href="https://www.google.com/maps/search/?api=1&query=Realty+World+Çağrı+Duran+Emlak+Antalya"
+                    target="_blank" class="map-action">
+                    <i class="fas fa-directions"></i> <span data-i18n="contact_map_link">Haritada Görüntüle</span>
+                </a>
+                <div class="contact-map-container">
+                    <iframe
+                        src="https://maps.google.com/maps?q=Çağlayan%20Mahallesi,%20Bülent%20Ecevit%20Bulvarı,%20Akasya%20Sitesi%20İş%20Merkezi%20C%20Blok%20No:%20157A,%20Muratpaşa/Antalya&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                        allowfullscreen="" loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+            <div class="contact-form-wrapper">
+                <form id="contactForm" class="contact-form"
+                    onsubmit="event.preventDefault(); alert('Form başarıyla gönderildi!');">
+                    <div class="form-group">
+                        <label for="name" data-i18n="form_name">Adınız Soyadınız</label>
+                        <input type="text" id="name" placeholder="Örn: Ahmet Yılmaz" required data-i18n="form_name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email" data-i18n="form_email">E-mail Adresiniz</label>
+                        <input type="email" id="email" placeholder="ornek@mail.com" required data-i18n="form_email">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" data-i18n="form_phone">Telefon Numarası <span
+                                class="required">*</span></label>
+                        <input type="tel" id="phone" placeholder="05XX XXX XX XX" required data-i18n="form_phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="message" data-i18n="form_message">Mesajınız</label>
+                        <textarea id="message" maxlength="200" placeholder="Mesajınızı buraya yazın..."
+                            data-i18n="form_message"></textarea>
+                        <div class="char-counter"><span id="char-count">0</span>/200</div>
+                    </div>
+                    <div class="form-group-checkbox">
+                        <input type="checkbox" id="kvkk" required>
+                        <label for="kvkk" data-i18n="form_kvkk">
+                            <span class="kvkk-link" onclick="openKvkkModal()">KVKK metnini</span> okudum ve onaylıyorum.
+                        </label>
+                    </div>
+                    <button type="submit" id="submitBtn" class="btn btn-primary btn-block" disabled
+                        data-i18n="contact_send">Bilgilerimi Gönder</button>
+                    <p class="form-note" data-i18n="contact_note">Telefon numarası girilmeden Gönder butonu aktifleşmez.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title text-center">Sıkça Sorulan Sorular</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Antalya'da kentsel dönüşüm süreci nasıl işler?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Süreç; binanızın risk tespiti yapılmasıyla başlar. Ardından hak sahipleriyle uzlaşma, projelendirme ve ruhsat aşamaları gelir. Çağrı Duran Emlak olarak tüm teknik ve hukuki danışmanlığı profesyonelce yönetiyoruz.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Gayrimenkul satarken veya kiralarken neden profesyonel destek almalıyım?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Doğru fiyatlandırma, etkili pazarlama, güvenilir alıcı/kiracı seçimi ve yasal süreçlerin hatasız yönetilmesi için uzman desteği şarttır. Mülkünüzün değerini koruyor ve zaman kazandırıyoruz.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Arsa yatırımı için Antalya'nın hangi bölgeleri daha avantajlıdır?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Döşemealtı villalık arsalar için, Aksu ve Serik ise gelişim potansiyeli yüksek ticari ve konut yatırım alanları için oldukça avantajlıdır. Bütçenize göre en karlı lokasyonları analiz ediyoruz.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Çağrı Duran Emlak hangi bölgelerde aktif hizmet veriyor?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Başta Lara, Konyaaltı, Muratpaşa ve Kepez olmak üzere Antalya'nın tamamında; Döşemealtı, Aksu, Serik ve Manavgat gibi yatırım değeri artan ilçelerde de uzmanlığımız bulunmaktadır.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Social Feeds Section -->
+    <section id="social-feeds" class="section bg-light">
+        <div class="container yt-container" style="max-width: 1200px;">
+            <div class="social-feeds-grid">
+                <!-- YouTube Column -->
+                <div class="feed-column">
+                    <h2 class="section-title text-center" style="font-size: 2rem;" data-i18n="youtube_title">YOUTUBE
+                    </h2>
+                    <div class="feed-wrapper" id="yt-thumbnail-wrapper" style="cursor: pointer;">
+                        <img id="yt-thumbnail" src="" alt="YouTube Video"
+                            style="width:100%; height:100%; object-fit:cover; display:none;">
+                        <div class="play-overlay">
+                            <i class="fab fa-youtube"
+                                style="font-size: 4rem; color: #ff0000; filter: drop-shadow(0 0 10px rgba(0,0,0,0.5)); opacity: 0.9;"></i>
+                        </div>
+                    </div>
+                    <div class="text-center" style="margin-top: 20px;">
+                        <a href="https://youtube.com/@emlakgunlukleri0" target="_blank" class="btn btn-primary"
+                            id="youtube-subscribe-btn">
+                            <i class="fab fa-youtube"></i> <span data-i18n="youtube_subscribe">YouTube'a Göz At</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Instagram Column -->
+                <div class="feed-column">
+                    <h2 class="section-title text-center" style="font-size: 2rem;" data-i18n="instagram_title">INSTAGRAM
+                    </h2>
+                    <div class="feed-wrapper" id="insta-wrapper"
+                        onclick="window.open('https://instagram.com/cagriduran.realestate', '_blank')"
+                        style="cursor: pointer;">
+                        <!-- Using a generic background for Instagram placeholder -->
+                        <div
+                            style="width:100%; height:100%; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); opacity: 0.8;">
+                        </div>
+                        <div class="play-overlay">
+                            <i class="fab fa-instagram"
+                                style="font-size: 4rem; color: #fff; filter: drop-shadow(0 0 10px rgba(0,0,0,0.5)); opacity: 0.9;"></i>
+                        </div>
+                    </div>
+                    <div class="text-center" style="margin-top: 20px;">
+                        <a href="https://instagram.com/cagriduran.realestate" target="_blank" class="btn btn-primary"
+                            style="background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); border: none;">
+                            <i class="fab fa-instagram"></i> <span data-i18n="instagram_subscribe">Instagram'a Göz
+                                At</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#" class="logo text-light">
+                        <img src="images/logo.png" alt="Logo" class="footer-logo">
+                        Çağrı Duran <span>Emlak</span>
+                    </a>
+                    <p data-i18n="footer_text">Profesyonel gayrimenkul değerleme ve danışmanlık hizmetleri ile
+                        yanınızdayız.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-i18n="footer_copy">&copy; 2026 Çağrı Duran Emlak. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Admin Modal -->
+    <div id="portfolioModal" class="modal-overlay" style="display: none;">
+        <div class="modal-content modal-content-large">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h2 style="margin-bottom: 20px;" data-i18n="admin_title">Portföy Ekle / Düzenle</h2>
+            <form id="modal-form" onsubmit="event.preventDefault(); savePortfolio();">
+                <input type="hidden" id="modal-id">
+                <div class="form-group">
+                    <label data-i18n="admin_cat">Kategori</label>
+                    <select id="modal-type" required
+                        style="width: 100%; padding: 10px; border-radius: 4px; border: 1px solid #ddd;">
+                        <option value="sale" data-i18n="admin_sale">Satılık</option>
+                        <option value="rent" data-i18n="admin_rent">Kiralık</option>
+                        <option value="arsa" data-i18n="admin_land">Arsa</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label data-i18n="admin_prop_title">Başlık</label>
+                    <input type="text" id="modal-title" required data-i18n="admin_prop_title">
+                </div>
+                <div class="form-group" style="display: flex; gap: 10px;">
+                    <div style="flex: 1;">
+                        <label data-i18n="admin_price">Fiyat (örn: ₺15.000.000)</label>
+                        <input type="text" id="modal-price" required data-i18n="admin_price">
+                    </div>
+                    <div style="flex: 1;">
+                        <label data-i18n="admin_link">Harici Detay Linki (Opsiyonel)</label>
+                        <input type="text" id="modal-link" placeholder="Emlak sitesi vb. URL" data-i18n="admin_link">
+                    </div>
+                </div>
+                <div class="form-group" style="display: flex; gap: 10px;">
+                    <div style="flex: 1;">
+                        <label data-i18n="admin_room">Özellik 1 (Oda/Durum)</label>
+                        <input type="text" id="modal-beds" required data-i18n="admin_room">
+                    </div>
+                    <div style="flex: 1;">
+                        <label data-i18n="admin_area">Özellik 2 (m²)</label>
+                        <input type="text" id="modal-area" required data-i18n="admin_area">
+                    </div>
+                    <div style="flex: 1;">
+                        <label data-i18n="admin_badge">Rozet Metni</label>
+                        <input type="text" id="modal-badge" required data-i18n="admin_badge">
+                    </div>
+                </div>
+                <div class="form-group" style="display: flex; gap: 10px; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 48%;">
+                        <label data-i18n="admin_age">Bina Yaşı</label>
+                        <input type="text" id="modal-age" placeholder="Örn: 5" data-i18n="admin_age">
+                    </div>
+                    <div style="flex: 1; min-width: 48%;">
+                        <label data-i18n="admin_floor">Bulunduğu Kat</label>
+                        <input type="text" id="modal-floor" placeholder="Örn: 3. Kat" data-i18n="admin_floor">
+                    </div>
+                    <div style="flex: 1; min-width: 48%;">
+                        <label data-i18n="admin_loc">Konum / İlçe</label>
+                        <input type="text" id="modal-location" placeholder="Örn: Kadıköy" data-i18n="admin_loc">
+                    </div>
+                    <div style="flex: 1; min-width: 48%;">
+                        <label data-i18n="admin_heat">Isıtma Sistemi</label>
+                        <input type="text" id="modal-heating" placeholder="Örn: Doğalgaz / Kombi"
+                            data-i18n="admin_heat">
+                    </div>
+                </div>
+                <div class="form-group" style="display: flex; gap: 10px; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 48%;">
+                        <label data-i18n="admin_furn">Eşya Durumu</label>
+                        <input type="text" id="modal-furnished" placeholder="Örn: Eşyalı/Boş" data-i18n="admin_furn">
+                    </div>
+                    <div style="flex: 1; min-width: 48%;">
+                        <label data-i18n="admin_bath">Banyo Sayısı</label>
+                        <input type="text" id="modal-bathrooms" placeholder="Örn: 2" data-i18n="admin_bath">
+                    </div>
+                    <div style="flex: 1; min-width: 48%;">
+                        <label data-i18n="admin_balc">Balkon</label>
+                        <input type="text" id="modal-balcony" placeholder="Örn: Var / Yok" data-i18n="admin_balc">
+                    </div>
+                    <div style="flex: 1; min-width: 48%;">
+                        <label data-i18n="admin_credit">Krediye Uygunluk</label>
+                        <input type="text" id="modal-credit" placeholder="Örn: Uygun" data-i18n="admin_credit">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label data-i18n="admin_desc">Mülk Bilgileri / Açıklama</label>
+                    <textarea id="modal-desc" rows="3" data-i18n="admin_desc"
+                        style="width: 100%; padding: 10px; border-radius: 4px; border: 1px solid #ddd; font-family: inherit; resize: vertical;"
+                        placeholder="Mülk hakkında detaylı bilgi giriniz..."></textarea>
+                </div>
+                <div class="form-group">
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                        <label style="margin-bottom: 0;" data-i18n="admin_images">Görseller (En az 1 Kapak
+                            Görseli)</label>
+                        <button type="button" class="btn btn-outline" onclick="addImageSlot()"
+                            style="padding: 5px 15px; font-size: 0.85rem; color: var(--primary); border-color: var(--primary);">
+                            <i class="fas fa-plus"></i> <span data-i18n="admin_add_img">Yeni Görsel Ekle</span>
+                        </button>
+                    </div>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 15px;"
+                        data-i18n="admin_img_hint">Görsel yüklemek için cihazınızdan resim seçebilir veya
+                        sürükleyebilirsiniz. Alternatif olarak resim URL'si yapıştırabilirsiniz.</p>
+                    <div id="dynamic-image-container" class="image-upload-grid">
+                        <!-- Dynamic image slots will be rendered here -->
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block" data-i18n="admin_save">Kaydet</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Password Change Modal -->
+    <div id="passwordModal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closePasswordModal()">&times;</span>
+            <h2 style="margin-bottom: 20px;">Şifre Değiştir</h2>
+            <form onsubmit="event.preventDefault(); changePassword();">
+                <div class="form-group">
+                    <label>Eski Şifre</label>
+                    <input type="password" id="old-password" required>
+                </div>
+                <div class="form-group">
+                    <label>Yeni Şifre</label>
+                    <input type="password" id="new-password" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Güncelle</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Image Gallery Modal -->
+    <div id="galleryModal" class="gallery-overlay" style="display: none;">
+        <span class="close-gallery" onclick="closeGallery()">&times;</span>
+        <button class="gallery-nav prev" onclick="changeGalleryImage(-1)"><i class="fas fa-chevron-left"></i></button>
+        <div class="gallery-content">
+            <img id="gallery-main-img" src="" alt="Gallery Image">
+            <div class="gallery-thumbnails" id="gallery-thumbnails">
+                <!-- Thumbnails will go here -->
+            </div>
+        </div>
+        <button class="gallery-nav next" onclick="changeGalleryImage(1)"><i class="fas fa-chevron-right"></i></button>
+    </div>
+
+    <!-- Video Modal -->
+    <div id="videoLightboxModal" class="modal-overlay"
+        style="display: none; z-index: 2000; background-color: rgba(0,0,0,0.9);">
+        <div class="modal-content"
+            style="max-width: 900px; width: 95%; background: transparent; box-shadow: none; padding: 0; position: relative;">
+            <span class="close-modal" onclick="closeVideoModal()"
+                style="color: #fff; position: absolute; right: 0; top: -40px; font-size: 2.5rem; cursor: pointer; z-index: 2001;">&times;</span>
+            <div id="videoLightboxContainer"
+                style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; background: #000; border-radius: 8px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                <!-- Iframe injected via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- WhatsApp Widget -->
+    <div id="wa-widget" class="wa-widget">
+        <div class="wa-chat-box" id="wa-chat-box">
+            <div class="wa-header">
+                <div class="wa-header-info">
+                    <strong>Çağrı Duran Emlak</strong>
+                    <span>Çevrimiçi</span>
+                </div>
+                <i class="fas fa-times" onclick="toggleWaChat()" style="cursor:pointer; font-size: 1.2rem;"></i>
+            </div>
+            <div class="wa-body">
+                <div class="wa-message">
+                    Çağrı Duran Emlak'a hoşgeldiniz. Size nasıl yardımcı olabilirim?
+                </div>
+            </div>
+            <div class="wa-footer">
+                <input type="text" id="wa-input" placeholder="Mesajınızı yazın..."
+                    onkeypress="if(event.key==='Enter') sendWaMsg()">
+                <button onclick="sendWaMsg()"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+        <div class="wa-button" onclick="toggleWaChat()">
+            <i class="fab fa-whatsapp"></i>
+        </div>
+    </div>
+
+    <!-- Kentsel Dönüşüm Rich Modal -->
+    <div id="kdDetailModal" class="modal-overlay" style="display: none;">
+        <div class="modal-content modal-content-large kd-modal-custom">
+            <span class="close-modal" onclick="closeKDModal()">&times;</span>
+            <div class="kd-modal-header">
+                <h2>Kentsel Dönüşüm Süreci ve Başarı Hikayeleri</h2>
+                <p>Mülkünüzü Güvenle Geleceğe Taşıyoruz</p>
+            </div>
+            <div class="kd-modal-body">
+                <div class="kd-slider-wrapper">
+                    <button class="kd-nav-btn kd-prev" onclick="moveKdSlider(-1)"><i class="fas fa-chevron-left"></i></button>
+                    <div class="kd-steps-container">
+                        <!-- Steps will be injected by JS -->
+                    </div>
+                    <button class="kd-nav-btn kd-next" onclick="moveKdSlider(1)"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+            <div class="kd-modal-footer">
+                <button class="btn btn-primary" onclick="closeKDModal(); window.location.href='tel:+905435225881';">Hemen Ücretsiz Danışmanlık Alın</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- SEO İçin Gizli Kelime Yoğunluğu -->
+    <div style="display:none;">
+        Antalya satılık daire, Antalya kiralık daire, Antalya villa, Antalya lüks daire, Antalya arsa, Antalya emlak danışmanı, Lara satılık daire, Konyaaltı kiralık ev, Kepez satılık daire, Muratpaşa emlak, Antalya yatırım fırsatları
+    </div>
+
+    <!-- SCHEMA (Google için) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "RealEstateAgent",
+      "name": "Çağrı Duran Emlak",
+      "areaServed": "Antalya",
+      "telephone": "05435225881",
+      "email": "cagriduran@realtyworld.com.tr",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Antalya",
+        "addressCountry": "TR"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "Antalya'da kentsel dönüşüm süreci nasıl işler?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Süreç; binanızın risk tespiti yapılmasıyla başlar. Ardından hak sahipleriyle uzlaşma, projelendirme ve ruhsat aşamaları gelir."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Gayrimenkul satarken veya kiralarken neden profesyonel destek almalıyım?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Doğru fiyatlandırma, etkili pazarlama ve yasal süreçlerin hatasız yönetilmesi için uzman desteği şarttır."
+        }
+      }]
+    }
+    </script>
+ 
+    <!-- KVKK Modal -->
+    <div id="kvkkModal" class="modal-overlay" style="display: none;">
+        <div class="modal-content modal-content-medium">
+            <span class="close-modal" onclick="closeKvkkModal()">&times;</span>
+            <div class="kvkk-header">
+                <h2>KVKK Aydınlatma Metni</h2>
+            </div>
+            <div class="kvkk-body" style="max-height: 400px; overflow-y: auto; padding: 20px; text-align: left; font-size: 0.9rem; line-height: 1.5; color: var(--text-main);">
+                <p><strong>Çağrı Duran Emlak - Kişisel Verilerin Korunması ve İşlenmesi Aydınlatma Metni</strong></p>
+                <p>Çağrı Duran Emlak (“Şirket”) olarak kişisel verilerinizin güvenliği ve gizliliği hususuna azami hassasiyet göstermekteyiz. Bu bilinçle, Şirket tarafından sunulan ürün ve hizmetlerden faydalanan kişiler dahil, Şirket ile ilişkili tüm şahıslara ait her türlü kişisel verilerin 6698 sayılı Kişisel Verilerin Korunması Kanunu (“KVKK”)’na uygun olarak işlenerek muhafaza edilmesine büyük önem vermekteyiz.</p>
+                <p><strong>1. Kişisel Verilerin Toplanması, İşlenmesi ve İşleme Amaçları</strong></p>
+                <p>Kişisel verileriniz, Şirketimiz tarafından sunulan hizmetlerin mahiyetine bağlı olarak değişkenlik gösterebilmekle birlikte; otomatik ya da otomatik olmayan yöntemlerle, Şirketimiz birimleri, internet sitesi, sosyal medya mecraları ve benzeri vasıtalarla sözlü, yazılı ya da elektronik olarak toplanabilecektir.</p>
+                <p>Toplanan kişisel verileriniz; Şirketimiz tarafından sunulan hizmetlerden faydalanmanız için gerekli çalışmaların yapılması, size özel gayrimenkul fırsatlarının sunulması ve iletişim süreçlerinin yürütülmesi amaçlarıyla işlenebilecektir.</p>
+                <p><strong>2. İşlenen Kişisel Verilerin Kimlere ve Hangi Amaçla Aktarılabileceği</strong></p>
+                <p>Toplanan kişisel verileriniz; Şirketimiz tarafından sunulan hizmetlerden faydalanmanız için gerekli çalışmaların yapılması amacıyla iş ortaklarımıza, tedarikçilerimize, kanunen yetkili kamu kurumlarına ve özel kişilere, KVKK’nın 8. ve 9. maddelerinde belirtilen kişisel veri işleme şartları ve amaçları çerçevesinde aktarılabilecektir.</p>
+                <p><strong>3. Veri Sahibinin Hakları</strong></p>
+                <p>KVKK’nın 11. maddesi uyarınca veri sahipleri; kişisel veri işlenip işlenmediğini öğrenme, işlenmişse bilgi talep etme, işlenme amacına uygun kullanılıp kullanılmadığını öğrenme ve düzeltilmesini isteme haklarına sahiptir.</p>
+            </div>
+            <div class="kvkk-footer" style="padding-top: 20px; border-top: 1px solid #eee; margin-top: 20px;">
+                <button class="btn btn-primary btn-block" onclick="closeKvkkModal()">Anladım</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom JS -->
+    <script src="js/i18n.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
