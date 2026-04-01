@@ -352,7 +352,7 @@
                     <div class="form-group-checkbox">
                         <input type="checkbox" id="kvkk" required>
                         <label for="kvkk" data-i18n="form_kvkk">
-                            <span class="kvkk-link" onclick="openKvkkModal()">KVKK metnini</span> okudum ve onaylıyorum.
+                            KVKK <strong class="kvkk-link" style="cursor: pointer; color: var(--primary); text-decoration: underline;" onclick="openKvkkModal()">metnini</strong> okudum ve onaylıyorum.
                         </label>
                     </div>
                     <button type="submit" id="submitBtn" class="btn btn-primary btn-block" disabled
@@ -733,27 +733,131 @@
     <div id="kvkkModal" class="modal-overlay" style="display: none;">
         <div class="modal-content modal-content-medium">
             <span class="close-modal" onclick="closeKvkkModal()">&times;</span>
-            <div class="kvkk-header">
-                <h2>KVKK Aydınlatma Metni</h2>
+            <div class="kvkk-header" style="padding-bottom: 10px; border-bottom: 1px solid #eee; margin-bottom: 15px;">
+                <h2 style="font-size: 1.5rem; color: var(--secondary);">Yasal Bilgilendirme ve Politikalar</h2>
             </div>
-            <div class="kvkk-body" style="max-height: 400px; overflow-y: auto; padding: 20px; text-align: left; font-size: 0.9rem; line-height: 1.5; color: var(--text-main);">
-                <p><strong>Çağrı Duran Emlak - Kişisel Verilerin Korunması ve İşlenmesi Aydınlatma Metni</strong></p>
-                <p>Çağrı Duran Emlak (“Şirket”) olarak kişisel verilerinizin güvenliği ve gizliliği hususuna azami hassasiyet göstermekteyiz. Bu bilinçle, Şirket tarafından sunulan ürün ve hizmetlerden faydalanan kişiler dahil, Şirket ile ilişkili tüm şahıslara ait her türlü kişisel verilerin 6698 sayılı Kişisel Verilerin Korunması Kanunu (“KVKK”)’na uygun olarak işlenerek muhafaza edilmesine büyük önem vermekteyiz.</p>
-                <p><strong>1. Kişisel Verilerin Toplanması, İşlenmesi ve İşleme Amaçları</strong></p>
-                <p>Kişisel verileriniz, Şirketimiz tarafından sunulan hizmetlerin mahiyetine bağlı olarak değişkenlik gösterebilmekle birlikte; otomatik ya da otomatik olmayan yöntemlerle, Şirketimiz birimleri, internet sitesi, sosyal medya mecraları ve benzeri vasıtalarla sözlü, yazılı ya da elektronik olarak toplanabilecektir.</p>
-                <p>Toplanan kişisel verileriniz; Şirketimiz tarafından sunulan hizmetlerden faydalanmanız için gerekli çalışmaların yapılması, size özel gayrimenkul fırsatlarının sunulması ve iletişim süreçlerinin yürütülmesi amaçlarıyla işlenebilecektir.</p>
-                <p><strong>2. İşlenen Kişisel Verilerin Kimlere ve Hangi Amaçla Aktarılabileceği</strong></p>
-                <p>Toplanan kişisel verileriniz; Şirketimiz tarafından sunulan hizmetlerden faydalanmanız için gerekli çalışmaların yapılması amacıyla iş ortaklarımıza, tedarikçilerimize, kanunen yetkili kamu kurumlarına ve özel kişilere, KVKK’nın 8. ve 9. maddelerinde belirtilen kişisel veri işleme şartları ve amaçları çerçevesinde aktarılabilecektir.</p>
-                <p><strong>3. Veri Sahibinin Hakları</strong></p>
-                <p>KVKK’nın 11. maddesi uyarınca veri sahipleri; kişisel veri işlenip işlenmediğini öğrenme, işlenmişse bilgi talep etme, işlenme amacına uygun kullanılıp kullanılmadığını öğrenme ve düzeltilmesini isteme haklarına sahiptir.</p>
+            <div class="kvkk-body" style="max-height: 500px; overflow-y: auto; padding-right: 15px; text-align: left; font-size: 0.95rem; line-height: 1.6; color: var(--text-main);">
+                
+                <!-- KVKK -->
+                <section style="margin-bottom: 30px;">
+                    <h3 style="color: var(--primary); margin-bottom: 10px; font-size: 1.2rem;">KVKK Aydınlatma Metni</h3>
+                    <p>6698 sayılı Kişisel Verilerin Korunması Kanunu kapsamında, veri sorumlusu sıfatıyla <strong>Çağrı Duran Emlak</strong> olarak kişisel verileriniz işlenmektedir.</p>
+
+                    <h4 style="margin-top: 15px; margin-bottom: 5px; font-size: 1.05rem;">İşlenen Veriler</h4>
+                    <ul style="padding-left: 20px; margin-bottom: 10px;">
+                        <li>Ad Soyad</li>
+                        <li>Telefon</li>
+                        <li>E-posta</li>
+                        <li>IP adresi</li>
+                        <li>Talep mesajları</li>
+                    </ul>
+
+                    <h4 style="margin-top: 15px; margin-bottom: 5px; font-size: 1.05rem;">İşleme Amaçları</h4>
+                    <ul style="padding-left: 20px; margin-bottom: 10px;">
+                        <li>Satılık / kiralık gayrimenkul hizmeti sunmak</li>
+                        <li>Müşteri iletişimi sağlamak</li>
+                        <li>Pazarlama faaliyetleri</li>
+                        <li>Yasal yükümlülükler</li>
+                    </ul>
+
+                    <h4 style="margin-top: 15px; margin-bottom: 5px; font-size: 1.05rem;">Haklarınız</h4>
+                    <p>KVKK madde 11 kapsamında tüm haklarınızı kullanabilirsiniz.</p>
+                    <p>İletişim: <a href="mailto:cagriduran@realtyworld.com.tr" style="color: var(--primary);">cagriduran@realtyworld.com.tr</a></p>
+                </section>
+
+                <!-- AÇIK RIZA -->
+                <section style="margin-bottom: 30px;">
+                    <h3 style="color: var(--primary); margin-bottom: 10px; font-size: 1.2rem;">Açık Rıza Metni</h3>
+                    <p>Kişisel verilerimin Çağrı Duran Emlak tarafından işlenmesini kabul ediyorum.</p>
+
+                    <div style="background: rgba(10, 124, 255, 0.05); padding: 15px; border-radius: 8px; margin-top: 15px; border: 1px solid rgba(10, 124, 255, 0.2);">
+                        <div style="margin-bottom: 10px; display: flex; align-items: flex-start; gap: 8px;">
+                            <input type="checkbox" id="modal-kvkk-check" style="margin-top: 4px; width: 16px; height: 16px; cursor: pointer;"> 
+                            <label for="modal-kvkk-check" style="cursor: pointer; font-weight: 500;">KVKK metnini okudum kabul ediyorum</label>
+                        </div>
+                        <div style="margin-bottom: 15px; display: flex; align-items: flex-start; gap: 8px;">
+                            <input type="checkbox" id="modal-riza-check" style="margin-top: 4px; width: 16px; height: 16px; cursor: pointer;"> 
+                            <label for="modal-riza-check" style="cursor: pointer; font-weight: 500;">Açık rıza veriyorum</label>
+                        </div>
+                        <button type="button" class="btn btn-primary" onclick="acceptModalKvkk()" style="padding: 8px 25px;">Onayla</button>
+                    </div>
+                </section>
+
+                <!-- GİZLİLİK -->
+                <section style="margin-bottom: 30px;">
+                    <h3 style="color: var(--primary); margin-bottom: 10px; font-size: 1.2rem;">Gizlilik Politikası</h3>
+                    <p>Çağrı Duran Emlak olarak kullanıcı bilgilerinizin gizliliğine önem veriyoruz.</p>
+
+                    <ul style="padding-left: 20px; margin-bottom: 10px;">
+                        <li>Kişisel bilgiler üçüncü kişilerle paylaşılmaz</li>
+                        <li>Güvenli sunucularda saklanır</li>
+                        <li>Yasal zorunluluklar dışında aktarılmaz</li>
+                    </ul>
+
+                    <p>Siteyi kullanarak bu politikayı kabul etmiş sayılırsınız.</p>
+                </section>
+
+                <!-- ÇEREZ -->
+                <section style="margin-bottom: 30px;">
+                    <h3 style="color: var(--primary); margin-bottom: 10px; font-size: 1.2rem;">Çerez Politikası</h3>
+                    <p>Web sitemizde kullanıcı deneyimini artırmak için çerezler kullanılmaktadır.</p>
+
+                    <ul style="padding-left: 20px; margin-bottom: 10px;">
+                        <li>Zorunlu çerezler</li>
+                        <li>Analitik çerezler</li>
+                        <li>Pazarlama çerezleri</li>
+                    </ul>
+
+                    <p>Tarayıcı ayarlarınızdan çerezleri silebilirsiniz.</p>
+                </section>
+
+                <!-- MESAFELİ SATIŞ -->
+                <section style="margin-bottom: 10px;">
+                    <h3 style="color: var(--primary); margin-bottom: 10px; font-size: 1.2rem;">Mesafeli Satış Sözleşmesi</h3>
+                    <p>Bu sözleşme, internet üzerinden sunulan emlak danışmanlık hizmetlerini kapsar.</p>
+
+                    <h4 style="margin-top: 15px; margin-bottom: 5px; font-size: 1.05rem;">Hizmet</h4>
+                    <p>Satılık ve kiralık gayrimenkul danışmanlığı sağlanır.</p>
+
+                    <h4 style="margin-top: 15px; margin-bottom: 5px; font-size: 1.05rem;">Ücretlendirme</h4>
+                    <p>Hizmet bedelleri ilan veya sözleşmeye göre belirlenir.</p>
+
+                    <h4 style="margin-top: 15px; margin-bottom: 5px; font-size: 1.05rem;">İptal</h4>
+                    <p>Taraflar karşılıklı anlaşma ile hizmeti sonlandırabilir.</p>
+
+                    <h4 style="margin-top: 15px; margin-bottom: 5px; font-size: 1.05rem;">Yetki</h4>
+                    <p>Uyuşmazlıklarda Türkiye Cumhuriyeti mahkemeleri yetkilidir.</p>
+                </section>
+                
             </div>
-            <div class="kvkk-footer" style="padding-top: 20px; border-top: 1px solid #eee; margin-top: 20px;">
-                <button class="btn btn-primary btn-block" onclick="closeKvkkModal()">Anladım</button>
+            <div class="kvkk-footer" style="padding-top: 15px; border-top: 1px solid #eee; margin-top: 15px;">
+                <button class="btn btn-outline btn-block" onclick="closeKvkkModal()" style="border-color: #ddd; color: #666;">Kapat</button>
             </div>
         </div>
     </div>
 
     <!-- Custom JS -->
+    <script>
+        function acceptModalKvkk() {
+            var kvkkCheck = document.getElementById('modal-kvkk-check');
+            var rizaCheck = document.getElementById('modal-riza-check');
+            
+            if (!kvkkCheck.checked || !rizaCheck.checked) {
+                alert("Lütfen KVKK metnini ve açık rıza beyanını onaylayınız.");
+                return;
+            }
+            // Check the main contact form checkbox
+            var mainFormKvkk = document.getElementById('kvkk');
+            if(mainFormKvkk) {
+                mainFormKvkk.checked = true;
+                // Dispatch change event in case there is any listener attached (like validation)
+                mainFormKvkk.dispatchEvent(new Event('change')); 
+            }
+            closeKvkkModal();
+            alert("Onayınız alınmıştır. Formu doldurmaya devam edebilirsiniz.");
+        }
+    </script>
+
     <script src="js/i18n.js"></script>
     <script src="js/app.js"></script>
 </body>
