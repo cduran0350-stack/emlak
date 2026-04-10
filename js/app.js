@@ -520,6 +520,50 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    // ── Before/After Comparison Slider ──────────────────────────────────────
+    const initKDComparisonSlider = () => {
+        const slider = document.getElementById('kdComparisonSlider');
+        if (!slider) return;
+
+        const before = document.getElementById('kdCsBefore');
+        const handle = document.getElementById('kdCsHandle');
+        let isDragging = false;
+
+        const setPosition = (x) => {
+            const rect = slider.getBoundingClientRect();
+            let pct = (x - rect.left) / rect.width;
+            pct = Math.max(0.02, Math.min(0.98, pct)); // clamp between 2%-98%
+            const pctRight = (1 - pct) * 100;
+            before.style.clipPath = `inset(0 ${pctRight.toFixed(2)}% 0 0)`;
+            handle.style.left = `${(pct * 100).toFixed(2)}%`;
+        };
+
+        // Mouse events
+        handle.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            e.preventDefault();
+        });
+        window.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            setPosition(e.clientX);
+        });
+        window.addEventListener('mouseup', () => { isDragging = false; });
+
+        // Touch events
+        handle.addEventListener('touchstart', (e) => {
+            isDragging = true;
+            e.preventDefault();
+        }, { passive: false });
+        window.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            setPosition(e.touches[0].clientX);
+        }, { passive: true });
+        window.addEventListener('touchend', () => { isDragging = false; });
+    };
+
+    // Run after DOM ready
+    initKDComparisonSlider();
+
     window.openRichKDModal = () => {
         const modal = document.getElementById('kdDetailModal');
         const container = document.querySelector('.kd-steps-container');
@@ -527,27 +571,39 @@ document.addEventListener('DOMContentLoaded', () => {
         const steps = [
             {
                 num: '01',
-                title: 'Stratejik Teknik Analiz',
-                desc: 'Yapınızın deprem güvenliğini ve yapısal ömrünü, ileri mühendislik teknikleriyle analiz ediyor; resmi risk tespit süreçlerini sizin adınıza kusursuz bir titizlikle yönetiyoruz.',
-                img: 'https://images.unsplash.com/photo-1541976590-713941681591?auto=format&fit=crop&w=800&q=80'
+                title: 'Ücretsiz Ön İnceleme & Analiz',
+                desc: 'Binanızı uzman ekibimizle yerinde inceliyor, kentsel dönüşüm potansiyelini ve mevcut risk durumunu ücretsiz olarak raporluyoruz.',
+                img: 'images/kd-comparison.png'
             },
             {
                 num: '02',
-                title: 'Hukuki Danışmanlık ve Uzlaşı',
-                desc: 'Tüm hak sahiplerinin mülkiyet haklarını koruyan şeffaf bir uzlaşı zemini oluşturuyoruz. Sözleşme süreçlerinden müteahhit seçimine kadar her adımda profesyonel rehberlik sunuyoruz.',
-                img: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=800&q=80'
+                title: 'Resmi Riskli Yapı Tespiti',
+                desc: 'Bakanlık lisanslı kuruluşlar aracılığıyla binanızın deprem risk raporunu hazırlatıyor, resmi süreci yasal güvenceyle başlatıyoruz.',
+                img: 'images/kd-consulting.png'
             },
             {
                 num: '03',
-                title: 'Estetik ve Fonksiyonel Tasarım',
-                desc: 'Antalya\'nın dokusuna uyumlu, yarının ihtiyaçlarını bugünle birleştiren vizyoner projeler geliştiriyoruz. Yaşam alanlarınızı sadece yenilemiyor, modernize ediyoruz.',
-                img: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80'
+                title: 'Hızlı Raporlama & Hak Analizi',
+                desc: 'Süreci 48 saat içinde raporlayarak kira yardımı, taşınma desteği ve kredi imkanları hakkında sizi detaylıca bilgilendiriyoruz.',
+                img: 'images/kd-main.png'
             },
             {
                 num: '04',
-                title: 'Değer Odaklı Teslimat',
-                desc: 'Projenizi her aşamasında sıkı denetimlere tabi tutarak, yüksek kalite standartlarında ve taahhüt edilen sürede teslim ediyoruz. Gayrimenkulünüze maksimum yatırım değeri kazandırıyoruz.',
-                img: 'https://images.unsplash.com/photo-1545324418-f1d3c5b53571?auto=format&fit=crop&w=800&q=80'
+                title: '2/3 Çoğunluk & Uzlaşı Yönetimi',
+                desc: 'Kat malikleri arasındaki uzlaşma sürecini profesyonelce yönetiyor, 2/3 çoğunluk kararının yasal mevzuata uygun alınmasını sağlıyoruz.',
+                img: 'images/kd-consulting.png'
+            },
+            {
+                num: '05',
+                title: 'Müteahhit Seçimi & İnşaat Süreci',
+                desc: 'Antalya\'nın en güvenilir inşaat firmalarıyla sizi buluşturuyor, kat karşılığı sözleşmenizi en yüksek avantajla imza altına alıyoruz.',
+                img: 'images/kd-progress.png'
+            },
+            {
+                num: '06',
+                title: 'Anahtar Teslim & Yeni Yaşam',
+                desc: 'İnşaat sürecini adım adım denetliyor, mülkünüzü modern, depreme dayanıklı ve yüksek yatırım değerli haliyle teslim ediyoruz.',
+                img: 'images/kd-main.png'
             }
         ];
 

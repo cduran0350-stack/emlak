@@ -119,66 +119,80 @@
     <section id="kentsel-donusum" class="section section-kd">
         <div class="container kd-container">
             <div class="kd-content text-center">
-                <h1 class="kd-main-title">ANTALYA EMLAK UZMANLIĞI & KENTSEL DÖNÜŞÜM DANIŞMANLIĞI</h1>
+                <div class="kd-header-group">
+                    <h1 class="kd-main-title">ANTALYA KENTSEL DÖNÜŞÜM & EMLAK DANIŞMANLIĞI</h1>
+                </div>
                 
-                <div class="kd-grid">
-                    <div class="kd-card highlight" onclick="openRichKDModal()" style="cursor: pointer;">
-                        <div class="kd-icon-box">
-                            <i class="fas fa-building-circle-check"></i>
+                <div class="kd-grid-premium">
+                    <!-- Before/After Slider Card -->
+                    <div class="kd-card-premium large kd-slider-card">
+                        <div class="kd-comparison-slider" id="kdComparisonSlider">
+                            <!-- AFTER (New building) - base layer -->
+                            <div class="kd-cs-after">
+                                <img src="images/kd-main.png" alt="Antalya Kentsel Dönüşüm Sonrası Modern Bina">
+                            </div>
+                            <!-- BEFORE (Old building) - clipped top layer -->
+                            <div class="kd-cs-before" id="kdCsBefore">
+                                <img src="images/kd-old-building.png" alt="Antalya Kentsel Dönüşüm Öncesi Eski Bina">
+                            </div>
+                            <!-- Draggable handle -->
+                            <div class="kd-cs-handle" id="kdCsHandle">
+                                <div class="kd-cs-arrows">
+                                    <i class="fas fa-chevron-left"></i>
+                                    <i class="fas fa-chevron-right"></i>
+                                </div>
+                            </div>
                         </div>
-                        <h2>Antalya Kentsel Dönüşüm & Kat Karşılığı</h2>
-                        <p>
-                            Antalya'da <strong>kentsel dönüşüm</strong> süreçlerini profesyonel bir ekiple yönetiyoruz. Riskli yapılarınızın tespiti, hak sahipleriyle uzlaşma ve güvenilir müteahhit seçimi süreçlerinde tam danışmanlık sağlayarak mülkünüzü modern, depreme dayanıklı yaşam alanlarına dönüştürüyoruz.
-                        </p>
-                        <span class="kd-btn-trigger">SÜRECİ İNCELE <i class="fas fa-arrow-right"></i></span>
+                        <!-- Overlay CTA -->
+                        <div class="kd-slider-cta">
+                            <span class="kd-btn-glass" onclick="openRichKDModal()">SÜRECİ İNCELE <i class="fas fa-arrow-right"></i></span>
+                        </div>
                     </div>
 
-                    <div class="kd-card seo-block">
-                        <h2>Satılık Daire Antalya</h2>
-                        <p>
-                            Lara, Konyaaltı ve Kepez gibi Antalya'nın yükselen değerlerinde hayalinizdeki <strong>satılık daire</strong> seçeneklerini keşfedin. Deniz manzaralı rezidanslardan site içi güvenli konutlara kadar geniş portföyümüz ve bölge bazlı yatırım analizlerimizle yanınızdayız.
-                        </p>
-                    </div>
-
-                    <div class="kd-card seo-block">
-                        <h2>Kiralık Daire Antalya</h2>
-                        <p>
-                            Merkezi konumda, ulaşımı kolay ve her bütçeye uygun <strong>kiralık daire</strong> alternatifleri sunuyoruz. Antalya kiralık ev piyasasında hızlı, güvenilir ve yasal süreçlere tam uyumlu çözümlerimizle mülkünüzü değerlendiriyoruz.
-                        </p>
-                    </div>
-
-                    <div class="kd-card seo-block">
-                        <h2>Villa & Lüks Konut</h2>
-                        <p>
-                            Antalya'nın doğasıyla iç içe, modern mimari ve yüksek yaşam standartlarına sahip <strong>lüks villa</strong> projelerini sizlere sunuyoruz. Yüksek yatırım getirisi ve prestij odaklı seçeneklerimizle ayrıcalıklı bir yaşamın kapılarını aralıyoruz.
-                        </p>
-                    </div>
-
-                    <div class="kd-card seo-block">
-                        <h2>Arsa ve Yatırım</h2>
-                        <p>
-                            Döşemealtı ve Aksu bölgelerinde <strong>villalık arsa</strong> ve ticari imarlı parsel seçeneklerimizle geleceğinizi inşa edin. Doğru lokasyon analizi ile Antalya'nın yatırım değeri en yüksek bölgelerinde uzman kadromuzla güvenle yatırım yapın.
-                        </p>
+                    <!-- Small Cards / Expertise -->
+                    <div class="kd-expertise-grid">
+                        <a href="https://wa.me/905435225881?text=Merhaba, kentsel dönüşüm danışmanlığı hakkında ücretsiz ön inceleme ve danışmanlık talep ediyorum." target="_blank" class="kd-expertise-card whatsapp-link" style="text-decoration: none; display: flex;">
+                            <div class="kd-exp-icon"><i class="fas fa-file-signature"></i></div>
+                            <div class="kd-exp-content">
+                                <h3>Ücretsiz Danışmanlık</h3>
+                                <p>Mülkünüzün kentsel dönüşüm potansiyelini profesyonel ekiplerimizle ücretsiz değerlendiriyoruz.</p>
+                            </div>
+                        </a>
+                        <a href="https://wa.me/905435225881?text=Merhaba, mülküm için hızlı kentsel dönüşüm raporlaması ve teknik fizibilite çalışması talep ediyorum." target="_blank" class="kd-expertise-card whatsapp-link" style="text-decoration: none; display: flex;">
+                            <div class="kd-exp-icon"><i class="fas fa-bolt-lightning"></i></div>
+                            <div class="kd-exp-content">
+                                <h3>Hızlı Raporlama</h3>
+                                <p>Risk tespiti ve fizibilite çalışmalarını 48 saat içerisinde tamamlayıp size sunuyoruz.</p>
+                            </div>
+                        </a>
+                        <div class="kd-expertise-card">
+                            <div class="kd-exp-icon"><i class="fas fa-handshake"></i></div>
+                            <div class="kd-exp-content">
+                                <h3>Güçlü Anlaşma</h3>
+                                <p>En iyi müteahhitlerle en avantajlı kat karşılığı oranlarını sizin için müzakere ediyoruz.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="kd-bottom-row">
-                    <div class="kd-info-block">
-                        <h2>Neden Bizi Tercih Etmelisiniz?</h2>
-                        <ul class="kd-list">
-                            <li><i class="fas fa-check"></i> Antalya bölgesinde uzman emlak danışmanlığı</li>
-                            <li><i class="fas fa-check"></i> Geniş satılık ve kiralık portföy</li>
-                            <li><i class="fas fa-check"></i> Kentsel dönüşümde anahtar teslim hizmet</li>
-                            <li><i class="fas fa-check"></i> Yüksek yatırım getirisi odaklı çözümler</li>
-                        </ul>
+                <div class="kd-cta-divider">
+                    <div class="kd-stats">
+                        <div class="kd-stat-item">
+                            <strong>150+</strong>
+                            <span>Tamamlanan Proje</span>
+                        </div>
+                        <div class="kd-stat-item">
+                            <strong>100%</strong>
+                            <span>Hukuki Güvence</span>
+                        </div>
+                        <div class="kd-stat-item">
+                            <strong>Antalya</strong>
+                            <span>Bölge Uzmanlığı</span>
+                        </div>
                     </div>
-                    
-                    <div class="kd-info-block">
-                        <h2>İletişim</h2>
-                        <p>
-                            Çağrı Duran Emlak ile Antalya’da doğru yatırım fırsatlarını yakalayın. Satılık, kiralık ve kentsel dönüşüm projeleri için hemen bizimle iletişime geçin.
-                        </p>
-                        <a href="#contact" class="btn btn-primary" style="margin-top: 15px;">Hemen İletişime Geçin</a>
+                    <div class="kd-cta-btns">
+                        <a href="tel:+905435225881" class="btn btn-primary"><i class="fas fa-phone"></i> Hemen Bilgi Alın</a>
+                        <a href="#contact" class="btn btn-outline" style="color: var(--secondary); border-color: var(--secondary);"><i class="fas fa-envelope"></i> Talebinizi İletin</a>
                     </div>
                 </div>
             </div>
@@ -669,8 +683,8 @@
         <div class="modal-content modal-content-large kd-modal-custom">
             <span class="close-modal" onclick="closeKDModal()">&times;</span>
             <div class="kd-modal-header">
-                <h2>Kentsel Dönüşüm Süreci ve Başarı Hikayeleri</h2>
-                <p>Mülkünüzü Güvenle Geleceğe Taşıyoruz</p>
+                <h2>ANTALYA KENTSEL DÖNÜŞÜM PROSİDÜRÜ</h2>
+                <p>Binanızın Değerine Değer Katacak 6 Temel Aşama</p>
             </div>
             <div class="kd-modal-body">
                 <div class="kd-slider-wrapper">
