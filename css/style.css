@@ -434,21 +434,8 @@ header.scrolled {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #f5f7f9; /* Subtle grey to blend with banner edges */
+    background-color: var(--bg-light);
     min-height: 200px;
-    overflow: hidden;
-}
-
-.hero-banner-section.hero-no-image {
-    background: linear-gradient(135deg, var(--secondary) 0%, var(--dark) 50%, #2a3f6f 100%);
-    min-height: 480px;
-    justify-content: center;
-    position: relative;
-}
-
-@keyframes heroReveal {
-    0% { opacity: 0; transform: scale(1.05); filter: blur(10px); }
-    100% { opacity: 1; transform: scale(1); filter: blur(0); }
 }
 
 .hero-image {
@@ -457,13 +444,7 @@ header.scrolled {
     height: auto;
     display: block;
     margin: 0 auto;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-    animation: heroReveal 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-    transition: transform 0.5s ease;
-}
-
-.hero-image:hover {
-    transform: scale(1.01);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
 }
 
 .hero-action-bar {
