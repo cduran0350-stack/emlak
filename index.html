@@ -569,7 +569,6 @@
                 <div class="form-group">
                     <label data-i18n="admin_desc">Mülk Bilgileri / Açıklama</label>
                     <textarea id="modal-desc" rows="3" data-i18n="admin_desc"
-                        style="width: 100%; padding: 10px; border-radius: 4px; border: 1px solid #ddd; font-family: inherit; resize: vertical;"
                         placeholder="Mülk hakkında detaylı bilgi giriniz..."></textarea>
                 </div>
                 <div class="form-group">
@@ -577,8 +576,7 @@
                         style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
                         <label style="margin-bottom: 0;" data-i18n="admin_images">Görseller (En az 1 Kapak
                             Görseli)</label>
-                        <button type="button" class="btn btn-outline" onclick="addImageSlot()"
-                            style="padding: 5px 15px; font-size: 0.85rem; color: var(--primary); border-color: var(--primary);">
+                        <button type="button" class="btn btn-outline" onclick="addImageSlot()">
                             <i class="fas fa-plus"></i> <span data-i18n="admin_add_img">Yeni Görsel Ekle</span>
                         </button>
                     </div>
@@ -745,10 +743,10 @@
     <div id="kvkkModal" class="modal-overlay" style="display: none;">
         <div class="modal-content modal-content-medium">
             <span class="close-modal" onclick="closeKvkkModal()">&times;</span>
-            <div class="kvkk-header" style="padding-bottom: 10px; border-bottom: 1px solid #eee; margin-bottom: 15px;">
+            <div class="kvkk-header">
                 <h2 style="font-size: 1.5rem; color: var(--secondary);">Yasal Bilgilendirme ve Politikalar</h2>
             </div>
-            <div class="kvkk-body" style="max-height: 500px; overflow-y: auto; padding-right: 15px; text-align: left; font-size: 0.95rem; line-height: 1.6; color: var(--text-main);">
+            <div class="kvkk-body">
                 
                 <!-- KVKK -->
                 <section style="margin-bottom: 30px;">
@@ -842,8 +840,8 @@
                 </section>
                 
             </div>
-            <div class="kvkk-footer" style="padding-top: 15px; border-top: 1px solid #eee; margin-top: 15px;">
-                <button class="btn btn-outline btn-block" onclick="closeKvkkModal()" style="border-color: #ddd; color: #666;">Kapat</button>
+            <div class="kvkk-footer">
+                <button class="btn btn-outline btn-block" onclick="closeKvkkModal()">Kapat</button>
             </div>
         </div>
     </div>
