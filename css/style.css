@@ -1772,6 +1772,7 @@ footer {
 .kd-card p {
     color: var(--text-muted);
     font-size: 1.05rem;
+    line-height: 1.7;
 }
 
 .kd-card.highlight {
@@ -1790,7 +1791,8 @@ footer {
 }
 
 .kd-card.highlight p {
-    color: rgba(255,255,255,0.8);
+    color: rgba(255,255,255,0.85);
+    line-height: 1.7;
 }
 
 .kd-card.highlight:hover {
