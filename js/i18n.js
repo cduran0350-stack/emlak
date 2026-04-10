@@ -14,6 +14,7 @@ const translations = {
         'float_ig': 'Instagram\'ı İnceleyin',
         'float_yt': 'YouTube Kanalımız',
         'float_phone': 'Hemen Arayın',
+        'float_mail': 'E-posta Gönderin',
         
         // Index Content
         'about_title': 'Hakkında',
@@ -111,6 +112,7 @@ const translations = {
         'float_ig': 'Check Instagram',
         'float_yt': 'Our YouTube Channel',
         'float_phone': 'Call Now',
+        'float_mail': 'Send an Email',
         
         // Index Content
         'about_title': 'About Us',
