@@ -2359,10 +2359,8 @@ footer {
     color: var(--secondary);
     margin-bottom: 20px;
 }
+
 @media (prefers-color-scheme: dark) {
-    .header-logo, .footer-logo {
-        filter: brightness(0) invert(1) drop-shadow(0 0 2px rgba(212, 175, 55, 0.5));
-    }
     .hero-banner-section {
         background-color: #0b132b;
     }
@@ -2377,3 +2375,4 @@ footer {
         opacity: 0.8;
     }
 }
+
